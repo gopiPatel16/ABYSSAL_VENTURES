@@ -56,9 +56,13 @@
   resize();
 
   /* ----- frame preload ----- */
-  fetch('assets/frames/manifest.json')
+  fetch('assets/frames/manifest.json', { cache: 'no-cache' })
     .then(r => r.json())
     .then(m => {
+      // pick HD on large/retina screens, SD elsewhere (mobile, small windows)
+      const wantHD = innerWidth * Math.min(devicePixelRatio || 1, 2) > 1500;
+      const set = m.sets ? (wantHD ? m.sets.hd : m.sets.sd) : { dir: 'assets/frames' };
+      window.__abyssalSet = set.dir; // debug: which quality tier was picked
       frameCount = m.count;
       frames = new Array(frameCount);
       let loaded = 0;
@@ -72,7 +76,7 @@
             loaderPct.textContent = String(pct).padStart(3, '0');
             res();
           };
-          img.src = `assets/frames/frame_${String(i).padStart(4, '0')}.jpg`;
+          img.src = `${set.dir}/frame_${String(i).padStart(4, '0')}.jpg`;
           frames[i] = img;
         }))
       );
