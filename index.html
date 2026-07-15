@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABYSSAL VENTURES — How deep will you go?</title>
+<meta name="description" content="Eight civilians a year. One vessel. The bottom of the world. Descend 3,800 m aboard the Triton-X.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@200;300;400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-mark">ABYSSAL&nbsp;VENTURES</div>
+    <div class="loader-sub">PRE-DIVE SYSTEMS CHECK</div>
+    <div class="loader-bar"><div id="loaderFill"></div></div>
+    <div class="loader-readout"><span id="loaderPct">000</span>% — BUFFERING DESCENT</div>
+  </div>
+</div>
+
+<!-- FIXED DESCENT CANVAS -->
+<canvas id="dive"></canvas>
+<div id="grain"></div>
+<div id="vignette"></div>
+
+<!-- CHROME -->
+<header id="chrome">
+  <div class="brand">ABYSSAL<span>VENTURES</span></div>
+  <div class="mission">TRITON-X · EXPEDITION 07 · 31.90°N 122.02°W</div>
+</header>
+
+<!-- HUD DEPTH METER -->
+<aside id="hud" aria-hidden="true">
+  <div class="hud-rail">
+    <div class="hud-ticks"></div>
+    <div class="hud-zone-label" style="--at:0%">0 — SURFACE</div>
+    <div class="hud-zone-label" style="--at:5.3%">200</div>
+    <div class="hud-zone-label" style="--at:26.3%">1000</div>
+    <div class="hud-zone-label" style="--at:100%">3800 — FLOOR</div>
+    <div id="hudMarker">
+      <div class="hud-caret">◄</div>
+      <div class="hud-box">
+        <div id="hudDepth">0000</div>
+        <div class="hud-unit">METERS</div>
+        <div id="hudZone">SUNLIT</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- SCROLL CONTENT -->
+<main id="content">
+
+  <section class="panel" id="hero" data-zone="surface">
+    <div class="inner" data-reveal>
+      <div class="kicker">CIVILIAN DEEP PROGRAM — 08 BERTHS / YEAR</div>
+      <h1>HOW DEEP<br>WILL YOU GO?</h1>
+      <p class="lede">Eight civilians a year. One vessel.<br>3,800 metres of silence.</p>
+      <div class="cue"><span class="cue-line"></span>SCROLL TO DIVE</div>
+    </div>
+  </section>
+
+  <section class="panel" data-zone="sunlit">
+    <div class="inner" data-reveal>
+      <div class="kicker">ZONE 01 — SUNLIT · 0–200 M</div>
+      <h2>AT 200 METERS,<br>99% OF SUNLIGHT IS GONE.</h2>
+      <p class="fact">The last of the day stays behind at the surface.<br>You won't miss it.</p>
+    </div>
+  </section>
+
+  <section class="panel" data-zone="twilight">
+    <div class="inner" data-reveal>
+      <div class="kicker">ZONE 02 — TWILIGHT · 200–1,000 M</div>
+      <h2>AT 1,000 METERS, PRESSURE IS<br>100× THE SURFACE.</h2>
+      <p class="fact">The hull takes the weight so you don't have to.<br>Floodlights on.</p>
+    </div>
+  </section>
+
+  <section class="panel" data-zone="midnight">
+    <div class="inner" data-reveal>
+      <div class="kicker">ZONE 03 — MIDNIGHT · 1,000–3,800 M</div>
+      <h2>DOWN HERE, LIFE MAKES<br>ITS OWN LIGHT.</h2>
+      <p class="fact">Nine in ten creatures below a thousand metres glow.<br>You are the visitor. Announce yourself gently.</p>
+    </div>
+  </section>
+
+  <section class="panel tall" id="vessel" data-zone="vessel">
+    <div class="inner" data-reveal>
+      <div class="kicker">THE VESSEL</div>
+      <h2 class="vessel-title">TRITON-X</h2>
+      <div class="specs">
+        <div class="spec"><div class="spec-k">PERSONNEL SPHERE</div><div class="spec-v">TITANIUM — 90 MM WALL</div></div>
+        <div class="spec"><div class="spec-k">LIFE SUPPORT</div><div class="spec-v">96 HOURS</div></div>
+        <div class="spec"><div class="spec-k">DEPTH RATING</div><div class="spec-v">4,000 M</div></div>
+        <div class="spec"><div class="spec-k">FLOODLIGHTS</div><div class="spec-v">2 × 20 kW</div></div>
+        <div class="spec"><div class="spec-k">VIEWPORT</div><div class="spec-v">1,400 MM ACRYLIC RING</div></div>
+        <div class="spec"><div class="spec-k">COMPLEMENT</div><div class="spec-v">2 PILOTS · 8 PASSENGERS</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="expedition" data-zone="expedition">
+    <div class="inner" data-reveal>
+      <div class="kicker">EXPEDITION 07</div>
+      <h2>8 SEATS. ₹2.4 CRORE.<br>DEPARTING MARCH 2027.</h2>
+      <p class="fact">Ten days at sea. Twelve hours on the bottom.<br>No windows on the world you left.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="cta" data-zone="floor">
+    <div class="inner" data-reveal>
+      <div class="kicker">3,800 M — THE FLOOR</div>
+      <h2>THE BOTTOM IS<br>TAKING NAMES.</h2>
+      <a class="manifest-btn" href="#" id="joinBtn">JOIN THE MANIFEST</a>
+      <p class="micro">APPLICATIONS REVIEWED QUARTERLY · MEDICAL CLEARANCE REQUIRED</p>
+      <footer class="site-foot">© MMXXVI ABYSSAL VENTURES · TRITON-X IS A FICTIONAL VESSEL · NO REFUNDS BELOW 1,000 M</footer>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/lenis.min.js"></script>
+<script src="js/main-frames.js"></script>
+</body>
+</html>

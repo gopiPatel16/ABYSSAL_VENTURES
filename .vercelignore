@@ -1,0 +1,5 @@
+# keep the deploy lean — the site only needs index.html, css/, js/, assets/frames/
+assets/video
+tools
+.claude
+README.md
